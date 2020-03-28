@@ -1,1 +1,1 @@
-get-service
+Get-service "$env:servicename"
