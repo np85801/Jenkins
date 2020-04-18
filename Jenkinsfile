@@ -9,8 +9,9 @@ pipeline {
       }
       
       stage('Stage2') {
-         steps {
-            input message: 'Need your input', parameters: [string(defaultValue: '', description: '', name: 'username', trim: false)]
+         input message: 'Need your input', parameters: [string(defaultValue: '', description: '', name: 'username', trim: false)]
+         steps { powershell 'write-host ${env:username}'
+            
          }
       }
    }
