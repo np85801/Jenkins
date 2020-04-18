@@ -8,7 +8,7 @@ pipeline {
    stages {
       stage('Hello') {
          steps {
-            echo "${$env:name}"
+            echo "${$env:test1}"
          }
       }
       
