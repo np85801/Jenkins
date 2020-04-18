@@ -39,7 +39,7 @@ pipeline {
             }
             steps {
           
-                powershell 'write-output "${service}"'
+                powershell 'write-output "${env:service}"'
         // Success!
     }
       
