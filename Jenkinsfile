@@ -19,11 +19,33 @@ pipeline {
         parameters {
             string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
         }
+            
+       
         
         }
          steps { powershell 'write-host ${env:username}'
             
          }
+         
+         
+         
       }
+      
+      stage('stage 5')
+    {
+        environment {
+        
+                service = powershell(returnStatus: true, script: 'get-service -name ${env:test1}')
+            }
+            steps {
+          
+                powershell 'write-output "${service}"'
+        // Success!
+    }
+      
+                
+        }
    }
+   
+   
 }
