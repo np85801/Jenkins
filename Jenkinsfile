@@ -10,7 +10,7 @@ pipeline {
       
       stage('Stage2') {
          steps {
-            powershell label: 'test', script: 'write-host "this is my pieline SCM Test"'
+            input message: 'Need your input', parameters: [string(defaultValue: '', description: '', name: 'username', trim: false)]
          }
       }
    }
